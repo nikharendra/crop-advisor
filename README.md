@@ -48,4 +48,4 @@ npm run dev
 \`\`\`
 
 ## Built By
-[Your Name] — solo build for HackDevengers 1.0
+[Harendra Singh Yadav] — solo build for HackDevengers 1.0
