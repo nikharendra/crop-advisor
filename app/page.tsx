@@ -22,10 +22,13 @@ export default function Home() {
         body: JSON.stringify({ crop, location }),
       });
 
-      if (!res.ok) throw new Error('Something went wrong. Try again.');
-
       const data = await res.json();
-      setAdvice(data.advice);
+
+if (!res.ok) {
+  throw new Error(data.error || 'Something went wrong. Try again.');
+}
+
+setAdvice(data.advice);
     } catch (err: any) {
       setError(err.message);
     } finally {
