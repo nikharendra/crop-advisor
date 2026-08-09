@@ -51,6 +51,7 @@ export default function Home() {
         alt="KhetSaathi logo"
         width={85}
         height={65}
+        style={{ width: '85px', height: '65px' }}
         className="object-contain"
       />
 
