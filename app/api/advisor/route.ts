@@ -43,13 +43,21 @@ Location: ${name}, ${country}
 Current conditions: Temperature ${weatherData.current.temperature_2m}°C, Humidity ${weatherData.current.relative_humidity_2m}%, Wind ${weatherData.current.wind_speed_10m} km/h
 5-day forecast: Max temps ${weatherData.daily.temperature_2m_max.join(', ')}°C, Min temps ${weatherData.daily.temperature_2m_min.join(', ')}°C, Expected rainfall ${weatherData.daily.precipitation_sum.join(', ')} mm
 
-Give simple, practical advice in plain language (avoid jargon) covering:
-1. Planting/growing guidance for this crop given current conditions
-2. Irrigation advice (should they water more/less, and when)
-3. Pest/disease risk based on humidity and temperature
-4. Any urgent warning if weather looks risky (heavy rain, extreme heat, etc.)
+Give simple, practical advice in plain language (avoid jargon). Format your response EXACTLY like this, with these exact headers:
 
-Keep it concise, friendly, and actionable — like you're speaking directly to the farmer. Use short paragraphs or bullet points.
+🌱 PLANTING & GROWING
+[your advice here]
+
+💧 IRRIGATION
+[your advice here]
+
+🐛 PEST & DISEASE RISK
+[your advice here]
+
+⚠️ WARNINGS
+[any urgent warning, or write "No major risks right now" if none]
+
+Keep each section to 2-3 short sentences. Be friendly and direct, like you're speaking to the farmer in person.
 `.trim();
 // Step 4: Call Groq (Llama model, OpenAI-compatible format)
     const aiRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
